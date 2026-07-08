@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/profile-line.svg" alt="A subtle animated line connecting electronics and AI" width="720" />
+  <img src="./assets/terminal-header.svg" alt="Terminal-style learning focus animation" width="720" />
 
   <h2>Hi, I'm Wejean Lin 👋</h2>
 
@@ -31,5 +31,9 @@ Sep 2024 - Present
 ---
 
 <p align="center">
-  Still learning, one step at a time. ✨
+  Still learning, one step at a time.
+</p>
+
+<p align="center">
+  <img src="./assets/terminal-footer.svg" alt="A small terminal cursor animation" width="320" />
 </p>

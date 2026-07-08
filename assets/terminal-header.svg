@@ -1,0 +1,155 @@
+<svg width="760" height="128" viewBox="0 0 760 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Terminal-style learning focus animation</title>
+  <desc id="desc">A calm terminal line showing AI Agents, Agent Memory, and Computer Vision with a blinking cursor.</desc>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    .shell {
+      fill: #f8fafc;
+      stroke: #d8dee9;
+      stroke-width: 1;
+    }
+
+    .bar {
+      fill: #eef2f7;
+    }
+
+    .dot-red {
+      fill: #d9a6a6;
+    }
+
+    .dot-yellow {
+      fill: #d6c184;
+    }
+
+    .dot-green {
+      fill: #9fbea8;
+    }
+
+    .prompt {
+      fill: #7b8794;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .text {
+      fill: #334155;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .muted {
+      fill: #8b9dab;
+    }
+
+    .cursor {
+      fill: #8b9dab;
+      animation: blink 1.1s steps(1, end) infinite;
+    }
+
+    .scan {
+      fill: url(#scanGradient);
+      opacity: 0;
+      animation: scan 6.5s ease-in-out infinite;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .shell {
+        fill: #111827;
+        stroke: #263241;
+      }
+
+      .bar {
+        fill: #172033;
+      }
+
+      .prompt {
+        fill: #94a3b8;
+      }
+
+      .text {
+        fill: #d1d8e6;
+      }
+
+      .muted {
+        fill: #94a3b8;
+      }
+
+      .cursor {
+        fill: #a8b4c5;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cursor,
+      .scan {
+        animation: none;
+      }
+
+      .scan {
+        opacity: 0;
+      }
+    }
+
+    @keyframes blink {
+      0%,
+      48% {
+        opacity: 1;
+      }
+
+      49%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes scan {
+      0%,
+      24% {
+        opacity: 0;
+        transform: translateX(-180px);
+      }
+
+      38%,
+      54% {
+        opacity: 0.38;
+      }
+
+      76%,
+      100% {
+        opacity: 0;
+        transform: translateX(760px);
+      }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="scanGradient" x1="0" y1="0" x2="96" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b9dab" stop-opacity="0" />
+      <stop offset="0.5" stop-color="#8b9dab" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#8b9dab" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect class="shell" x="34" y="20" width="692" height="88" rx="12" />
+  <path class="bar" d="M46 20H714C720.627 20 726 25.373 726 32V45H34V32C34 25.373 39.373 20 46 20Z" />
+  <circle class="dot-red" cx="57" cy="33" r="4" />
+  <circle class="dot-yellow" cx="72" cy="33" r="4" />
+  <circle class="dot-green" cx="87" cy="33" r="4" />
+
+  <rect class="scan" x="0" y="45" width="110" height="63" />
+
+  <text class="prompt" x="58" y="78">$</text>
+  <text class="text" x="82" y="78">learning</text>
+  <text class="muted" x="162" y="78"> --focus </text>
+  <text class="text" x="258" y="78">AI Agents</text>
+  <text class="muted" x="356" y="78"> / </text>
+  <text class="text" x="386" y="78">Agent Memory</text>
+  <text class="muted" x="518" y="78"> / </text>
+  <text class="text" x="548" y="78">Computer Vision</text>
+  <rect class="cursor" x="680" y="62" width="9" height="20" rx="1" />
+</svg>
