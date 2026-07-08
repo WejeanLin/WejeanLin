@@ -16,6 +16,12 @@
 - Agent Memory
 - Computer Vision
 
+### 🎓 Education
+
+**Guangdong University of Education**  
+B.Eng. in Electronic Information Engineering  
+Sep 2024 - Present
+
 ### 🔗 Links
 
 - 🌐 Personal page: [wejeanlin.github.io](https://wejeanlin.github.io)
