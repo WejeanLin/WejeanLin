@@ -1,0 +1,86 @@
+<svg width="720" height="96" viewBox="0 0 720 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">A subtle animated line connecting electronics and AI</title>
+  <desc id="desc">A calm line with small moving points, inspired by electronics and artificial intelligence.</desc>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    .line {
+      stroke: #8b9dab;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-dasharray: 5 12;
+      animation: drift 18s linear infinite;
+      opacity: 0.72;
+    }
+
+    .node {
+      fill: #8b9dab;
+      opacity: 0.82;
+      transform-origin: center;
+      animation: breathe 4.8s ease-in-out infinite;
+    }
+
+    .node:nth-of-type(3) {
+      animation-delay: 0.7s;
+    }
+
+    .node:nth-of-type(4) {
+      animation-delay: 1.4s;
+    }
+
+    .label {
+      fill: #718096;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .line {
+        stroke: #94a3b8;
+      }
+
+      .node {
+        fill: #94a3b8;
+      }
+
+      .label {
+        fill: #a0aec0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .line,
+      .node {
+        animation: none;
+      }
+    }
+
+    @keyframes drift {
+      to {
+        stroke-dashoffset: -170;
+      }
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        opacity: 0.52;
+        transform: scale(0.96);
+      }
+
+      50% {
+        opacity: 0.95;
+        transform: scale(1.06);
+      }
+    }
+  </style>
+
+  <path class="line" d="M56 50 C152 18 226 78 318 46 C425 9 494 85 664 42" />
+  <circle class="node" cx="56" cy="50" r="4.5" />
+  <circle class="node" cx="318" cy="46" r="4.5" />
+  <circle class="node" cx="664" cy="42" r="4.5" />
+  <text class="label" x="52" y="78">electronics</text>
+  <text class="label" x="584" y="76">artificial intelligence</text>
+</svg>
