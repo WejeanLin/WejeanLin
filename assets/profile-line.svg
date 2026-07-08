@@ -1,86 +1,145 @@
-<svg width="720" height="96" viewBox="0 0 720 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">A subtle animated line connecting electronics and AI</title>
-  <desc id="desc">A calm line with small moving points, inspired by electronics and artificial intelligence.</desc>
+<svg width="760" height="112" viewBox="0 0 760 112" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Subtle animated signal line</title>
+  <desc id="desc">A quiet animated signal line with soft circuit nodes.</desc>
   <style>
     :root {
       color-scheme: light dark;
     }
 
-    .line {
-      stroke: #8b9dab;
-      stroke-width: 1.4;
+    .trace {
+      stroke: #cbd5e1;
+      stroke-width: 1.2;
       stroke-linecap: round;
-      stroke-dasharray: 5 12;
-      animation: drift 18s linear infinite;
-      opacity: 0.72;
+      stroke-dasharray: 6 18;
+      animation: drift 20s linear infinite;
+      opacity: 0.52;
+    }
+
+    .signal {
+      stroke: url(#signalGradient);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 420;
+      stroke-dashoffset: 420;
+      animation: draw 7s ease-in-out infinite alternate;
+      opacity: 0.86;
     }
 
     .node {
-      fill: #8b9dab;
-      opacity: 0.82;
+      fill: #f8fafc;
+      stroke: #8b9dab;
+      stroke-width: 1.4;
       transform-origin: center;
-      animation: breathe 4.8s ease-in-out infinite;
-    }
-
-    .node:nth-of-type(3) {
-      animation-delay: 0.7s;
+      animation: pulse 5.6s ease-in-out infinite;
     }
 
     .node:nth-of-type(4) {
-      animation-delay: 1.4s;
+      animation-delay: 0.9s;
     }
 
-    .label {
-      fill: #718096;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.04em;
+    .node:nth-of-type(5) {
+      animation-delay: 1.8s;
+    }
+
+    .spark {
+      fill: #8b9dab;
+      opacity: 0;
+      animation: spark 7s ease-in-out infinite;
+    }
+
+    .spark:nth-of-type(7) {
+      animation-delay: 1.7s;
     }
 
     @media (prefers-color-scheme: dark) {
-      .line {
-        stroke: #94a3b8;
+      .trace {
+        stroke: #64748b;
+        opacity: 0.46;
       }
 
       .node {
-        fill: #94a3b8;
+        fill: #0f172a;
+        stroke: #94a3b8;
       }
 
-      .label {
-        fill: #a0aec0;
+      .spark {
+        fill: #94a3b8;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .line,
-      .node {
+      .trace,
+      .signal,
+      .node,
+      .spark {
         animation: none;
+      }
+
+      .signal {
+        stroke-dashoffset: 0;
       }
     }
 
     @keyframes drift {
       to {
-        stroke-dashoffset: -170;
+        stroke-dashoffset: -190;
       }
     }
 
-    @keyframes breathe {
-      0%, 100% {
-        opacity: 0.52;
+    @keyframes draw {
+      0% {
+        stroke-dashoffset: 420;
+      }
+
+      46%,
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
         transform: scale(0.96);
+        opacity: 0.72;
       }
 
       50% {
-        opacity: 0.95;
-        transform: scale(1.06);
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    @keyframes spark {
+      0%,
+      36%,
+      100% {
+        opacity: 0;
+      }
+
+      48%,
+      58% {
+        opacity: 0.9;
       }
     }
   </style>
 
-  <path class="line" d="M56 50 C152 18 226 78 318 46 C425 9 494 85 664 42" />
-  <circle class="node" cx="56" cy="50" r="4.5" />
-  <circle class="node" cx="318" cy="46" r="4.5" />
-  <circle class="node" cx="664" cy="42" r="4.5" />
-  <text class="label" x="52" y="78">electronics</text>
-  <text class="label" x="584" y="76">artificial intelligence</text>
+  <defs>
+    <linearGradient id="signalGradient" x1="64" y1="56" x2="696" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#94a3b8" stop-opacity="0.18" />
+      <stop offset="0.5" stop-color="#8b9dab" stop-opacity="0.92" />
+      <stop offset="1" stop-color="#94a3b8" stop-opacity="0.18" />
+    </linearGradient>
+  </defs>
+
+  <path class="trace" d="M64 58 C152 30 218 82 306 56 C398 28 454 86 548 58 C604 42 648 44 696 54" />
+  <path class="signal" d="M64 58 C152 30 218 82 306 56 C398 28 454 86 548 58 C604 42 648 44 696 54" />
+
+  <circle class="node" cx="64" cy="58" r="4.8" />
+  <circle class="node" cx="306" cy="56" r="4.8" />
+  <circle class="node" cx="548" cy="58" r="4.8" />
+  <circle class="node" cx="696" cy="54" r="4.8" />
+
+  <circle class="spark" cx="210" cy="69" r="2.4" />
+  <circle class="spark" cx="454" cy="72" r="2.4" />
 </svg>

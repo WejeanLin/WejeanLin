@@ -12,9 +12,9 @@
 
 ### 🌱 Learning
 
-- 🤖 AI Agents
-- 🧠 Agent Memory
-- 👁️ Computer Vision
+- AI Agents
+- Agent Memory
+- Computer Vision
 
 ### 🔗 Links
 
